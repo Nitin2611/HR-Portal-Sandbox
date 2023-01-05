@@ -1,0 +1,86 @@
+<template>
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">
+                <h2 class="card-heading">
+                    Practical Questions (2)
+                </h2>
+                <img src="https://mvclouds.com/wp-content/uploads/2020/08/mvclouds-logo.png" style="width: auto;height:30px;"/>
+            </div>
+            <div class="card-form">
+                <div class="header">
+                    <p>You have 2 practicals to complete within 30minutes</p>
+                </div>
+                <!-- <div class="container">
+                    <div class="element">
+                        <h1>Timer:</h1>
+                        <p id="demo" class="demo">{timer}</p>
+                    </div>
+                </div> -->
+                <template if:true={question1}>
+                    <p class="question-title">Question 1</p>
+                    <lightning-formatted-rich-text value={question1}></lightning-formatted-rich-text>
+                    <br/>
+                    <p class="question-title">Answer(Question - 1):</p>
+                    <lightning-textarea name="answer1" class="reqInpFld" required value={answer1} onchange={handleChange} placeholder="Write your answer for question 1" label="Required answer with a maximum length of 131072 characters" maxlength="131072" message-when-too-long="A maximum of 131072 characters are allowed in a answer." message-when-value-missing="An empty answer cannot be submitted" ></lightning-textarea>
+                </template>
+                <template if:true={question2}>
+                    <hr/>
+                    <br/>
+                    <p class="question-title">Question 2</p>
+                    <lightning-formatted-rich-text value={question2}></lightning-formatted-rich-text>
+                    <br/>
+                    <p class="question-title">Answer(Question - 2):</p>
+                    <lightning-textarea name="answer2" class="reqInpFld" required value={answer2} onchange={handleChange} placeholder="Write your answer for question 2" label="Required answer with a maximum length of 131072 characters" maxlength="131072" message-when-too-long="A maximum of 131072 characters are allowed in a answer." message-when-value-missing="An empty answer cannot be submitted" ></lightning-textarea>
+                </template>
+                <template if:true={question3}>
+                    <hr/>
+                    <br/>
+                    <p class="question-title">Question 3</p>
+                    <lightning-formatted-rich-text value={question3}></lightning-formatted-rich-text>
+                    <br/>
+                    <p class="question-title">Answer(Question - 3):</p>
+                    <lightning-textarea name="answer3" class="reqInpFld" required value={answer3} onchange={handleChange} placeholder="Write your answer for question 3" label="Required answer with a maximum length of 131072 characters" maxlength="131072" message-when-too-long="A maximum of 131072 characters are allowed in a answer." message-when-value-missing="An empty answer cannot be submitted" ></lightning-textarea>
+                </template>
+                <template if:true={question4}>
+                    <hr/>
+                    <br/>
+                    <p class="question-title">Question 4</p>
+                    <lightning-formatted-rich-text value={question4}></lightning-formatted-rich-text>
+                    <br/>
+                    <p class="question-title">Answer(Question - 4):</p>
+                    <lightning-textarea name="answer4" class="reqInpFld" required value={answer4} onchange={handleChange} placeholder="Write your answer for question 4" label="Required answer with a maximum length of 131072 characters" maxlength="131072" message-when-too-long="A maximum of 131072 characters are allowed in a answer." message-when-value-missing="An empty answer cannot be submitted" ></lightning-textarea>
+                </template>
+                <template if:true={question5}>
+                    <hr/>
+                    <br/>
+                    <p class="question-title">Question 5</p>
+                    <lightning-formatted-rich-text value={question5}></lightning-formatted-rich-text>
+                    <br/>
+                    <p class="question-title">Answer(Question - 5):</p>
+                    <lightning-textarea name="answer5" class="reqInpFld" required value={answer5} onchange={handleChange} placeholder="Write your answer for question 5" label="Required answer with a maximum length of 131072 characters" maxlength="131072" message-when-too-long="A maximum of 131072 characters are allowed in a answer." message-when-value-missing="An empty answer cannot be submitted" ></lightning-textarea>
+                </template>
+                <template if:true={question6}>
+                    <hr/>
+                    <br/>
+                    <p class="question-title">Question 6</p>
+                    <lightning-formatted-rich-text value={question6}></lightning-formatted-rich-text>
+                    <br/>
+                    <p class="question-title">Answer(Question - 6):</p>
+                    <lightning-textarea name="answer6" class="reqInpFld" required value={answer6} onchange={handleChange} placeholder="Write your answer for question 6" label="Required answer with a maximum length of 131072 characters" maxlength="131072" message-when-too-long="A maximum of 131072 characters are allowed in a answer." message-when-value-missing="An empty answer cannot be submitted" ></lightning-textarea>
+                </template>
+
+                <div class="action">
+                    <button class="action-button" onclick={submitanswerdetails}>Submit</button>
+                </div>
+            </div>
+            <!-- <div class="card-info">
+                <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+            </div> -->
+        </div>
+    </div>
+    <template if:true={showspinner}>
+        <lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+    </template>
+</template>

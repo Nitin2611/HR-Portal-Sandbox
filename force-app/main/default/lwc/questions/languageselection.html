@@ -1,0 +1,70 @@
+<template>
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">
+                <h2 class="card-heading">
+                    Language Selection
+                    <!-- <small>Fill Up The Details</small> -->
+                </h2>
+                <img src="https://mvclouds.com/wp-content/uploads/2020/08/mvclouds-logo.png"
+                    style="width: 100px;position: absolute;right: 0%;" />
+            </div>
+            <div class="card-form">
+                <div class="header">
+                    <p>Choose the language you are comfertable with..(max 2)</p>
+                </div>
+                <fieldset>
+                    <label>
+                        <input type="checkbox" value="Javascript" name="Java Script" onchange={checkboxchange}/>
+                        <span class="checkbox-style">Java Script</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" value="HTML" name="HTML" onchange={checkboxchange}/>
+                        <span class="checkbox-style">HTML</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" value="CSS" name="CSS" onchange={checkboxchange}/>
+                        <span class="checkbox-style">CSS</span>
+                    </label>
+                    <label>
+                        <input type="checkbox" value="JAVA" name="Java" onchange={checkboxchange}/>
+                        <span class="checkbox-style">JAVA</span>
+                    </label>
+
+                    <label>
+                        <input type="checkbox" value="Python" name="Python" onchange={checkboxchange}/>
+                        <span class="checkbox-style">PYTHON</span>
+                    </label>
+                </fieldset>
+                <p class="errorcls">{errormsg}</p>
+
+
+                <div class="action">
+                    <button class="action-button" disabled={langdisable} onclick={nextfromlanguage}>Next</button>
+                    <!-- <lightning-button class="action-button" label="Next" onclick={nextfromlanguage}></lightning-button> -->
+                </div>
+            </div>
+            <!-- <div class="card-info">
+                <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+            </div> -->
+        </div>
+    </div>
+    <template if:true={confirm}>
+        <!--popup2-->
+        <div id="popup2" class="popup-container">
+            <div class="popup-content">
+                <a href="#" onclick={closepopup} class="close">&times;</a>
+                <h3>Thanks for choosing languages</h3>
+                <p>Please confirm your selected languages {showlanguages} and then click on next</p>
+                <div style="display: flex;justify-content: flex-end;width:100%;">
+                    <button class="action-button nextpage" onclick={gotoquestions}>Next</button>
+                </div>
+                <h6>Note: Once you click on next you can't go back.</h6>
+            </div>
+        </div>
+    </template>
+    <template if:true={showspinner}>
+        <lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+    </template>
+</template>

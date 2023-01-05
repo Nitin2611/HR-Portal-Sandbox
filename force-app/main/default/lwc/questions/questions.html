@@ -1,0 +1,60 @@
+<template>
+    <div class="container">
+        <!-- code here -->
+        <div class="card">
+            <div class="card-image">
+                <h2 class="card-heading">
+                    Candidate Details
+                    <!-- <small>Fill Up The Details</small> -->
+                </h2>
+                <img src="https://mvclouds.com/wp-content/uploads/2020/08/mvclouds-logo.png" style="width: 100px;position: absolute;right: 0%;top:35%"/>
+            </div>
+            <div class="card-form">
+                <!-- <div class="input">
+                    <lightning-input type="text" class="input-field" name="firstname" variant="label-hidden" required  onkeydown={handleChange}></lightning-input>
+                    <label class="input-label" for="firstname">First name</label> 
+                </div>
+                <div class="input">
+                    <lightning-input type="text" class="input-field" name="lastname" variant="label-hidden" required  onkeydown={handleChange}></lightning-input>
+                    <label class="input-label" for="lastname">Last Name</label>
+                </div>
+                <div class="input">
+                    <lightning-input type="email" class="input-field" name="email" variant="label-hidden" required pattern="[^@]+@[^@]+\.[^@]+" onkeydown={handleChange}></lightning-input>
+                    <label class="input-label" for="email">Email</label>
+                </div>
+                <div class="input">
+                    <lightning-input type="text" class="input-field" name="enroll" variant="label-hidden" required  onkeydown={handleChange}></lightning-input>
+                    <label class="input-label" for="enroll">Enrollment No.</label>
+                </div> -->
+                <div class="input">
+                    <lightning-input label="First Name" aria-autocomplete="off" class="reqInpFld" type="text" name="firstname" required message-when-pattern-mismatch="Please enter FirstName" onchange={handleChange}></lightning-input>
+                </div>
+                <div class="input">
+                    <lightning-input label="Last Name" aria-autocomplete="off" class="reqInpFld" type="text" name="lastname" required message-when-pattern-mismatch="Please enter LastName" onchange={handleChange}></lightning-input>
+                </div>
+                <div class="input">
+                    <lightning-input label="Email" aria-autocomplete="off" class="reqInpFld" type="email" name="email" required pattern="[^@]+@[^@]+\.[^@]+" message-when-pattern-mismatch="Please enter valid Email" onchange={handleChange}></lightning-input>
+                </div>
+                <div class="input">
+                    <lightning-input label="Enrollment No." aria-autocomplete="off" class="reqInpFld" type="text" name="enroll" pattern="[0-9]{10,12}" required message-when-pattern-mismatch="Please enter valid Enrollment Number" onchange={handleChange}></lightning-input>
+                </div>
+
+                <!-- <div class="input">
+                    <input type="password" class="input-field" required />
+                    <label class="input-label">Password</label>
+                </div> -->
+                
+
+                <div class="action">
+                    <button class="action-button" disabled={submitdisable} onclick={submituserdetails}>Submit</button>
+                </div>
+            </div>
+            <!-- <div class="card-info">
+                <p>By signing up you are agreeing to our <a href="#">Terms and Conditions</a></p>
+            </div> -->
+        </div>
+    </div>
+    <template if:true={showspinner}>
+        <lightning-spinner variant="brand" alternative-text="Loading" size="large"> </lightning-spinner>
+    </template>
+</template>
